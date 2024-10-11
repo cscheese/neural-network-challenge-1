@@ -26,15 +26,62 @@ student_loans_with_deep_learning.ipynb from Module 18
 - from pathlib import Path
 
 ### Before you Begin 
-- Create a new repository in GitHub called _neural-network-challenge-1_
+- Create a new repository in GitHub called _`neural-network-challenge-1`_
 - Add the starter file _student_loans_with_deep_learning.ipynb_ from Module 18
+![alt text](images/read_file.png)
 
 ### Note
 >Although you can use other tools, it is highly recommended you use Google Colab to complete this assignment. Some computers and environments have challenges with tensorflow and tensorflow.keras
 
 ### Instructions 
-This challenge consists of the following subsections:
-- Prepare the data for use on a neural network model.
-- Compile and evaluate a model using a neural network.
-- Predict loan repayment success by using your neural network model.
-- Discuss creating a recommendation system for student loans.
+This challenge consists of the following steps:
+#### Step 1. Prepare the data for use on a neural network model.
+create features (X) and target (y) data sets
+![alt text](images/define_target_set_y.png)
+
+define features set X. Drop "credit_ranking"
+![alt text](images/define_feature_set_x_drop_credit_rank.png) 
+
+split into training and testing data sets
+![alt text](images/split_training_test_sets.png)
+
+scale, fit, and transform data
+![alt text](images/scale_fit&_transform.png)
+
+#### Step 2. Compile and evaluate a model using a neural network.
+define the number of inputs (features)
+![alt text](images/review_features.png)
+
+define hidden nodes and neurons
+![alt text](images/define_nodes.png)
+
+create Sequential model instance
+![alt text](images/seq_model_instance.png)
+
+Compile and fit the model using `binary_crossentropy` loss function and `accuracy` evaluation metric
+![alt text](images/loss_&accuracy.png)
+
+fit the model
+![alt text](images/fit_model_50epochs.png)
+
+evaluate the model using test data using loss & accuracy
+![alt text](images/loss_&accuracy.png)
+
+save and export your model as a keras file
+![alt text](images/set_file_path_export.png)
+
+#### Step 3. Predict loan repayment success by using your neural network model.
+
+reload saved keras model 
+![alt text](images/load_keras_model.png)
+
+Make predictions on the testing data
+![alt text](images/test_predictions.png)
+
+save predictions to a DataFrame. Round predictions
+![alt text](images/round_predictions.png)
+
+display classification report with y test and predictions
+![alt text](images/classification_report.png)
+
+#### Step 4. Discuss creating a recommendation system for loans 
